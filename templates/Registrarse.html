@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Registrarse
+{% endblock %}
+
+
+{% block body %}
+
+
+
+<form class="login-form" method="post" action="/Registrarse">
+    <div class="form-group">
+        <input id="User" type="text" class="form-control" name="usuario"  placeholder="Usuario">
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Correo">
+
+        <input type="password"  class = "Registrarse" name = "password" required="true" placeholder="Password" />
+        <input type="password" name = "confirmation" required="true" placeholder="Password confirmation"/>
+        <input type="submit" name="Register" value="Register" />  
+        <a href="#" class="login-forgot-pass">forgot password?</a>
+    </div>
+</form>
+{% endblock %}

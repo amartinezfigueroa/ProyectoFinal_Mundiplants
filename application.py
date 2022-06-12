@@ -48,3 +48,22 @@ def inisiosecion():
         return redirect("/")
     else:
         return render_template("iniciosecion.html") 
+
+@app.route("/Registrarse", methods = ["POST", "GET"])
+def Registrarse():
+    if request.method == "POST":
+        usuario = request.form.get("usuario")
+        print(usuario)
+
+        contraseña = request.form.get("password")
+        print(contraseña)
+
+        confirmacion = request.form.get("confirmation")
+        print(confirmacion)
+
+        if contraseña != confirmacion:
+            flash("la contraseña no coincide")
+            return render_template("Registrarse.html") 
+           
+    else:
+        return render_template("Registrarse.html")
